@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
     m3x3_imprimir(a);
 
     m3x3 r;
-    m3x3_suma(a, b, *r);
+    m3x3_suma(a, b, r);
     m3x3_imprimir(r);
     return 0;
 }
