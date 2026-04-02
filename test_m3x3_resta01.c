@@ -3,6 +3,7 @@
 
 int main(int argc, char const *argv[])
 {
+    puts("test_resta:");
     m3x3 a = {
         1, 2, 3,
         4, 5, 6,
