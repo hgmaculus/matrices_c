@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 typedef int32_t m3x3[3][3];
+typedef int32_t m32_t;
 
 // suma de dos matrices de 3x3 de forma estatica
 void m3x3_suma(m3x3 a, m3x3 b, m3x3 r)
@@ -22,7 +23,7 @@ void m3x3_suma(m3x3 a, m3x3 b, m3x3 r)
     r[2][2] = a[2][2] + b[2][2];
 }
 // resta de dos matrices de 3x3 de forma estatica
-void m3x3_resta(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
+void m3x3_resta(m3x3 a, m3x3 b, m3x3 r)
 {
     /*
     [1,2,3]
@@ -55,6 +56,7 @@ void m3x3_suma_linear(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
     // printf("sizeof matriz: %d\n", sizeof(b));
     // printf("sizeof matriz: %d\n", sizeof(r));
     int8_t matriz_tam = sizeof((int32_t *)r);
+    //printf("Matriz size: %d\n", matriz_tam);
     for (int8_t i = 0; i <= matriz_tam; i++)
     {
         // printf("pa = %d\npb = %d\n", *pa, *pb);
