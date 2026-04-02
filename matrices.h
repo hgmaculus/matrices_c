@@ -4,8 +4,10 @@
 #include <inttypes.h>
 #include <stdio.h>
 
+typedef int32_t m3x3[3][3];
+
 // suma de dos matrices de 3x3 de forma estatica
-void m3x3_suma(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
+void m3x3_suma(m3x3 a, m3x3 b, m3x3 r)
 {
     r[0][0] = a[0][0] + b[0][0];
     r[0][1] = a[0][1] + b[0][1];
@@ -79,7 +81,7 @@ void m3x3_mult_n(int32_t a[3][3], int32_t b, int32_t r[3][3])
     r[2][2] = a[2][2] * b;
 }
 
-void m3x3_imprimir(int32_t a[3][3])
+void m3x3_imprimir(m3x3 a)
 {
     int8_t i, j;
     for (i = 0; i < 3; i++)
