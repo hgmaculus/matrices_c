@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 // suma de dos matrices de 3x3 de forma estatica
-void suma_m3x3(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
+void m3x3_suma(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
 {
     r[0][0] = a[0][0] + b[0][0];
     r[0][1] = a[0][1] + b[0][1];
@@ -20,7 +20,7 @@ void suma_m3x3(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
     r[2][2] = a[2][2] + b[2][2];
 }
 // resta de dos matrices de 3x3 de forma estatica
-void resta_m3x3(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
+void m3x3_resta(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
 {
     /*
     [1,2,3]
@@ -42,7 +42,7 @@ void resta_m3x3(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
 
 // Demostracion a suma de matrices en forma lineal
 // Para la computadora la matriz siempre es un vector continuo
-void suma_m3x3_linear(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
+void m3x3_suma_linear(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
 {
     int32_t *pa, *pb, *pr;
     pa = (int32_t *)a;
@@ -63,7 +63,8 @@ void suma_m3x3_linear(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
     }
 }
 // multiplicacion de una matriz de 3x3 por un numero
-void mult_n_m3x3(int32_t a[3][3], int32_t b, int32_t r[3][3])
+// la matriz resultante es r
+void m3x3_mult_n(int32_t a[3][3], int32_t b, int32_t r[3][3])
 {
     r[0][0] = a[0][0] * b;
     r[0][1] = a[0][1] * b;
@@ -78,7 +79,7 @@ void mult_n_m3x3(int32_t a[3][3], int32_t b, int32_t r[3][3])
     r[2][2] = a[2][2] * b;
 }
 
-void ver_m3x3(int32_t a[3][3])
+void m3x3_imprimir(int32_t a[3][3])
 {
     int8_t i, j;
     for (i = 0; i < 3; i++)
@@ -90,8 +91,8 @@ void ver_m3x3(int32_t a[3][3])
         puts("");
     }
 }
-
-void traspuesta_m3x3(int32_t a[3][3], int32_t t[3][3])
+// dada una matriz a 
+void m3x3_traspuesta(int32_t a[3][3], int32_t t[3][3])
 {
     int8_t i, j;
     for (i = 0; i < 3; i++)
@@ -104,8 +105,9 @@ void traspuesta_m3x3(int32_t a[3][3], int32_t t[3][3])
 }
 
 // Obtener el determinante de una matriz de 3x3
-void determinante_sarrus_m3x3(int32_t a[3][3], int32_t d)
+
+void m3x3_determinante_sarrus(int32_t a[3][3], int32_t *d)
 {
-    d =  (a[0][0] * a[1][1] * a[2][2]) + (a[0][1] * a[1][2] * a[2][0]) + (a[0][2] * a[1][0] * a[2][1])
+    *d =  (a[0][0] * a[1][1] * a[2][2]) + (a[0][1] * a[1][2] * a[2][0]) + (a[0][2] * a[1][0] * a[2][1])
         - (a[0][2] * a[1][1] * a[2][0]) - (a[0][1] * a[1][0] * a[2][2]) - (a[0][0] * a[1][2] * a[2][1]);
 }
