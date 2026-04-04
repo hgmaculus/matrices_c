@@ -68,7 +68,7 @@ void m3x3_suma_linear(int32_t a[3][3], int32_t b[3][3], int32_t r[3][3])
 }
 // multiplicacion de una matriz de 3x3 por un numero
 // la matriz resultante es r
-void m3x3_mult_n(int32_t a[3][3], int32_t b, int32_t r[3][3])
+void m3x3_mult_n(m3x3 a, int32_t b, m3x3 r)
 {
     r[0][0] = a[0][0] * b;
     r[0][1] = a[0][1] * b;
@@ -82,7 +82,27 @@ void m3x3_mult_n(int32_t a[3][3], int32_t b, int32_t r[3][3])
     r[2][1] = a[2][1] * b;
     r[2][2] = a[2][2] * b;
 }
+// multiplicacion de dos matrices de 3x3
+// la matriz resultante es r
+void m3x3_mult(m3x3 a, m3x3 b, m3x3 r)
+{
+    r[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0] + a[0][2] * b[2][0];
+    r[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1] + a[0][2] * b[2][1];
+    r[0][2] = a[0][0] * b[0][2] + a[0][1] * b[1][2] + a[0][2] * b[2][2];
+    
+    r[1][0] =  0;
+    r[1][2] =  0;
+    r[1][1] =  0;
 
+    r[2][0] =  0;
+    r[2][1] =  0;
+    r[2][2] =  0;
+    /*
+    puts("");
+    printf("1=%d 2=%d 3=%d", (a[0][0] * b[0][2]),  (a[0][1] * b[1][2]),  (a[0][2] * b[2][2]));
+    puts("");
+    */
+}
 void m3x3_imprimir(m3x3 a)
 {
     int8_t i, j;
