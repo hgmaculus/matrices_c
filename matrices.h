@@ -103,6 +103,7 @@ void m3x3_mult(m3x3 a, m3x3 b, m3x3 r)
     puts("");
     */
 }
+// imprime en pantalla una matriz m3x3 apuntada por a
 void m3x3_imprimir(m3x3 a)
 {
     int8_t i, j;
@@ -114,6 +115,19 @@ void m3x3_imprimir(m3x3 a)
         }
         puts("");
     }
+}
+// compara dos matrices m3x3 apuntada por a y b
+int m3x3_comparar(m3x3 a, m3x3 b)
+{
+    int8_t i, j;
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            if(a[i][j] != b[i][j]) return 1;
+        }
+    }
+    return 0;
 }
 // dada una matriz a 
 void m3x3_traspuesta(int32_t a[3][3], int32_t t[3][3])
