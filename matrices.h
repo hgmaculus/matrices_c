@@ -4,8 +4,41 @@
 #include <inttypes.h>
 #include <stdio.h>
 
+typedef int32_t m2x2[2][2];
 typedef int32_t m3x3[3][3];
 typedef int32_t m32_t;
+
+// suma de dos matrices de 2x2 de forma estatica
+void m2x2_suma(m2x2 a, m2x2 b, m2x2 r)
+{
+    r[0][0] = a[0][0] + b[0][0];
+    r[0][1] = a[0][1] + b[0][1];
+    r[1][0] = a[1][0] + b[1][0];
+    r[1][1] = a[1][1] + b[1][1];
+}
+
+// resta de dos matrices de 3x3 de forma estatica
+void m2x2_resta(m2x2 a, m2x2 b, m2x2 r)
+{
+    r[0][0] = a[0][0] - b[0][0];
+    r[0][1] = a[0][1] - b[0][1];
+    r[1][0] = a[1][0] - b[1][0];
+    r[1][1] = a[1][1] - b[1][1];
+}
+
+// imprime en pantalla una matriz m2x2 apuntada por a
+void m2x2_imprimir(m2x2 a)
+{
+    int8_t i, j;
+    for (i = 0; i < 2; i++)
+    {
+        for (j = 0; j < 2; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        puts("");
+    }
+}
 
 // suma de dos matrices de 3x3 de forma estatica
 void m3x3_suma(m3x3 a, m3x3 b, m3x3 r)
